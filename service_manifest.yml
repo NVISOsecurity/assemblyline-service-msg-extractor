@@ -1,0 +1,22 @@
+name: MsgParser
+version: $SERVICE_TAG
+description: Parse emails using extract-msg library while extracting attachments, headers, URIs, ...
+
+accepts: (document/office/unknown|document/email)
+rejects: empty|metadata/.*
+
+stage: CORE
+category: Static Analysis
+
+file_required: true
+timeout: 120
+disable_cache: false
+
+enabled: true
+is_external: false
+licence_count: 0
+
+docker_config:
+  image: x1mus/assemblyline-service-msg-parser:$SERVICE_TAG
+  cpu_cores: 1
+  ram_mb: 256
