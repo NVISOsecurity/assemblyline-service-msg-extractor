@@ -53,11 +53,9 @@ class MsgParser(ServiceBase):
 				kv_section.add_tag("network.static.domain", header["X-MS-Exchange-CrossTenant-AuthSource"].lower())
 
 			# Handling the attachments
-			msg.save_attachments()
-			for ofile in os.listdir("/opt/al_service/"):
-				if ofile not in ["msg_parser.py", "Dockerfile", "service_manifest.yml", "__init__.py", "__pycache__"]:
-					os.rename("/opt/al_service/" + ofile, self.working_directory + "/" + ofile)
-					request.add_extracted(self.working_directory + "/" + ofile, ofile, "Attachment")
+			msg.save_attachments(customPath=self.working_directory)
+			for ofile in os.listdir(self.working_directory):
+				request.add_extracted(self.working_directory + "/" + ofile, ofile, "Attachment")
 
 			result.add_section(kv_section)
 		except OSError:

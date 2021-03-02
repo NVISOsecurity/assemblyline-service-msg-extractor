@@ -15,6 +15,5 @@ COPY . .
 ARG version=4.0.0.dev1
 USER root
 RUN sed -i -e "s/\$SERVICE_TAG/$version/g" service_manifest.yml
-RUN chmod +w .
 
 USER assemblyline
