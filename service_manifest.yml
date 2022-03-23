@@ -1,5 +1,5 @@
 name: MsgParser
-version: $SERVICE_TAG
+version: 4.2.0.stable1
 description: Parse emails using extract-msg library while extracting attachments, headers, URIs, ...
 
 accepts: (document/office/unknown|document/email)
@@ -17,6 +17,6 @@ is_external: false
 licence_count: 0
 
 docker_config:
-  image: ghcr.io/nvisosecurity/assemblyline-service-msg-parser:$SERVICE_TAG
+  image: ghcr.io/nvisosecurity/assemblyline-service-msg-extractor:main
   cpu_cores: 1
   ram_mb: 256
