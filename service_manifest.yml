@@ -1,5 +1,5 @@
 name: MsgParser
-version: 4.2.0.stable1
+version: 4.3.0.stable1
 description: Parse emails using extract-msg library while extracting attachments, headers, URIs, ...
 
 accepts: (document/office/unknown|document/email)
